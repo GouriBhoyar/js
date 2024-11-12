@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Set Operations</h1>
+
+<label for="setA">Enter Set A (comma separated, e.g., 1,2,3): </label>
+<input type="text" id="setA" placeholder="1, 2, 3, 4, 5">
+<br><br>
+
+<label for="setB">Enter Set B (comma separated, e.g., 4,5,6): </label>
+<input type="text" id="setB" placeholder="4, 5, 6, 7, 8">
+<br><br>
+
+<button onclick="performSetOperations()">Perform Set Operations</button>
+
+<div class="result" id="result"></div>
+
+<script>
+    function performSetOperations() {
+        const setA = new Set(document.getElementById('setA').value.split(',').map(Number));
+        const setB = new Set(document.getElementById('setB').value.split(',').map(Number));
+
+        const union = new Set([...setA, ...setB]);
+        const intersection = new Set([...setA].filter(x => setB.has(x)));
+        const difference = new Set([...setA].filter(x => !setB.has(x)));
+        const setDifference = new Set([...setB].filter(x => !setA.has(x)));
+
+        displayResults(union, intersection, difference, setDifference);
+    }
+
+    function displayResults(union, intersection, difference, setDifference) {
+        document.getElementById('result').innerHTML = `
+            <h3>Results:</h3>
+            <p><strong>Union:</strong> ${Array.from(union).join(', ')}</p>
+            <p><strong>Intersection:</strong> ${Array.from(intersection).join(', ')}</p>
+            <p><strong>Difference (A - B):</strong> ${Array.from(difference).join(', ')}</p>
+            <p><strong>Set Difference (B - A):</strong> ${Array.from(setDifference).join(', ')}</p>
+        `;
+    }
+</script>
+
+</body>
+</html>
+
