@@ -1,0 +1,35 @@
+/*function func() {
+    var arr = ["shift", "splice", "filter", "pop"];
+    const elementToRemove = "splice";
+    const index = arr.indexOf(elementToRemove);
+    if (index > -1) {
+        const spliced = arr.splice(index, 1);
+        console.log("Removed element:", spliced);
+    } else {
+        console.log("Element not found:", elementToRemove);
+    }
+    console.log("Remaining elements:", arr);
+}
+func();*/
+
+
+/*const array = ['you', 'will', 'learn', 'javascript'];
+const hasValue = array.includes('javascript');
+if (hasValue) {
+    console.log('Array contains the value');
+} else {
+    console.log('Array does not contain the value');
+}*/
+
+// Program to empty an array using a function
+function emptyArray(arr) { 
+    // Setting the array length to 0 to empty it
+    arr.length = 0; 
+    return arr;
+}
+
+/*const array1 = [1, 2, 3];  
+console.log("Original Array:", array1);  
+
+const result = emptyArray(array1);  
+console.log("Empty Array Result:", result);*/  
