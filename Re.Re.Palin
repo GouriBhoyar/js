@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation</title>
+    
+    <script src="Third.js"></script>
+</head>
+<body>
+    <h1>String Manipulation</h1>
+
+    <div>
+        <h2>Reverse String</h2>
+        <input type="text" id="inputString" placeholder="Enter a string">
+        <button onclick="handleReverse()">Reverse</button>
+        <p id="reverseResult"></p>
+    </div>
+
+    <div>
+        <h2>Replace String</h2>
+        <input type="text" id="inputString1" placeholder="Enter a string">
+        <input type="text" id="inputString2" placeholder="Replace with">
+        <button onclick="handleReplace()">Replace</button>
+        <p id="replaceResult"></p>
+    </div>
+
+    <div>
+        <h2>Check Palindrome</h2>
+        <input type="text" id="inputString3" placeholder="Enter a string">
+        <button onclick="handlePalindrome()">Check Palindrome</button>
+        <p id="palindromeResult"></p>
+    </div>
+
+    <script>
+        
+        
+        function reverseString(str) {
+            let newString = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+                newString += str[i];
+            }
+            return newString;
+        }
+        
+        function replaceString(str1, str2) {
+            let newString = str1.replace(str1, str2);
+            return newString;
+        }
+        
+        function checkPalindrome(str3) {
+            const len = str3.length;
+            for (let i = 0; i < len / 2; i++) {
+                if (str3[i] !== str3[len - 1 - i]) {
+                    return 'It is not a palindrome';
+                }
+            }
+            return 'It is a palindrome';
+        }
+        
+        function handleReverse() {
+            const input = document.getElementById('inputString').value;
+            const result = reverseString(input);
+            document.getElementById('reverseResult').textContent = result;
+        }
+        
+        function handleReplace() {
+            const input1 = document.getElementById('inputString1').value;
+            const input2 = document.getElementById('inputString2').value;
+            const result = replaceString(input1, input2);
+            document.getElementById('replaceResult').textContent = result;
+        }
+        
+        function handlePalindrome() {
+            const input = document.getElementById('inputString3').value;
+            const result = checkPalindrome(input);
+            document.getElementById('palindromeResult').textContent = result;
+        }
+    </script>
+</body>
+</html>
