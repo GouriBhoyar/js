@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="Generator" content="EditPlus">
+    <meta name="Author" content="Your Name">
+    <meta name="Keywords" content="HTML, JavaScript, Colors, Effects">
+    <meta name="Description" content="A simple HTML page with JavaScript color-changing effects.">
+    <script language="javascript">
+        
+        function ChangeColor1() {
+            document.body.style.backgroundColor = 'Red';
+            setTimeout(ChangeColor2, 2000);
+        }
+
+        function ChangeColor2() {
+            document.body.style.backgroundColor = 'Pink';
+            setTimeout(ChangeColor3, 2000);
+        }
+
+        function ChangeColor3() {
+            document.body.style.backgroundColor = 'Green';
+            setTimeout(ChangeColor4, 2000);
+        }
+
+        function ChangeColor4() {
+            document.body.style.backgroundColor = 'Yellow';
+        }
+
+        
+        function myFunction(x) {
+            x.style.background = "yellow";
+        }
+    </script>
+</head>
+<body onmouseover="ChangeColor1()" style="cursor: pointer;">
+    <p>Hover over this page to start the color change cycle:</p>
+    <label for="nameInput">Enter your name:</label>
+    <input type="text" id="nameInput" onfocus="myFunction(this)">
+</body>
+</html>
